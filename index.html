@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laundry Box — Lavanderia em Perdizes, São Paulo | Cuidado e Praticidade</title>
-    <meta name="description" content="Sua lavanderia completa na Rua Cardoso de Almeida, 1311 - Perdizes. Lavagem, secagem e cuidados com roupas delicadas. Atendimento rápido via WhatsApp!">
+    <title>Laundry Box — Lavanderia em Perdizes, São Paulo | Cuidado & Praticidade</title>
+    <meta name="description" content="Lavanderia autoral e profissional na Rua Cardoso de Almeida, 1311 - Perdizes. Serviços de lavagem, secagem e cuidados com peças delicadas. Atendimento via WhatsApp!">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph / Facebook / WhatsApp -->
+    <!-- Open Graph / Social Media Meta -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://laundrybox.com.br/">
-    <meta property="og:title" content="Laundry Box — Lavanderia em Perdizes, São Paulo">
-    <meta property="og:description" content="Serviço de lavanderia profissional e autosserviço com excelência em Perdizes. Fale conosco no WhatsApp!">
+    <meta property="og:title" content="Laundry Box — Cuidado Autoral e Profissional para suas Roupas em Perdizes">
+    <meta property="og:description" content="Serviço de lavanderia com excelência técnica e atendimento humano na Rua Cardoso de Almeida, 1311 - Perdizes, São Paulo.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=1200&q=80">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: DM Serif Display + DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -29,19 +29,20 @@
                         navy: {
                             DEFAULT: '#102C46',
                             mid: '#245B78',
-                            light: '#1e486d',
+                            light: '#1B3B5A',
                         },
+                        offwhite: '#F8F7F3',
                         teal: {
                             DEFAULT: '#36B8A5',
-                            hover: '#2ea190',
-                            light: '#e8f8f5',
+                            hover: '#2EA190',
+                            soft: '#E8F6F4',
                         },
-                        slateBg: '#F1F5F7',
-                        bodyGray: '#66737C',
+                        textGray: '#66737C',
+                        surfaceBg: '#F1F0EC'
                     },
                     fontFamily: {
-                        sans: ['"Open Sans"', 'sans-serif'],
-                        heading: ['Montserrat', 'sans-serif'],
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        serif: ['"DM Serif Display"', 'serif'],
                     }
                 }
             }
@@ -51,12 +52,19 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom Micro-Styles -->
+    <!-- Estilos Customizados & Acessibilidade -->
     <style>
+        /* Foco acessível visível */
         :focus-visible {
-            outline: 3px solid #36B8A5;
-            outline-offset: 2px;
+            outline: 2px solid #36B8A5;
+            outline-offset: 3px;
         }
+
+        /* Animação suave para accordions */
+        .faq-answer {
+            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+        }
+
         @media (prefers-reduced-motion: reduce) {
             html {
                 scroll-behavior: auto;
@@ -69,7 +77,7 @@
         }
     </style>
 
-    <!-- Schema.org Structured Data -->
+    <!-- Schema.org JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -92,178 +100,158 @@
         "latitude": -23.5385,
         "longitude": -46.6698
       },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "08:00",
-        "closes": "19:00"
-      },
       "priceRange": "$$"
     }
     </script>
 </head>
-<body class="bg-slateBg text-bodyGray font-sans antialiased selection:bg-teal selection:text-white flex flex-col min-h-screen">
+<body class="bg-offwhite text-textGray font-sans antialiased selection:bg-teal selection:text-white flex flex-col min-h-screen">
 
-    <!-- TOP ANNOUNCEMENT BAR -->
-    <aside class="bg-navy text-white text-xs md:text-sm py-2 px-4 border-b border-navy-mid/40">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
-            <div class="flex items-center space-x-2">
-                <i class="fa-solid fa-location-dot text-teal" aria-hidden="true"></i>
-                <span>Perdizes: <strong>Rua Cardoso de Almeida, 1311</strong>, São Paulo — SP</span>
+    <!-- BARRA SUPERIOR DE INFORMAÇÕES DE ATENDIMENTO -->
+    <aside class="bg-navy text-white text-xs py-2 px-4 border-b border-navy-mid/30">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-teal animate-pulse"></span>
+                <span>Unidade Perdizes: <strong>Rua Cardoso de Almeida, 1311</strong>, São Paulo — SP</span>
             </div>
-            <div class="flex items-center space-x-4">
-                <a href="tel:5511985853188" class="hover:text-teal transition-colors flex items-center gap-1.5">
-                    <i class="fa-solid fa-phone text-xs" aria-hidden="true"></i>
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/5511985853188" target="_blank" rel="noopener noreferrer" class="hover:text-teal transition-colors flex items-center gap-1.5 font-medium">
+                    <i class="fa-brands fa-whatsapp text-teal" aria-hidden="true"></i>
                     <span>(11) 98585-3188</span>
                 </a>
             </div>
         </div>
     </aside>
 
-    <!-- HEADER & NAVIGATION -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-200">
+    <!-- CABEÇALHO PRINCIPAL AUTORAL -->
+    <header class="sticky top-0 z-40 bg-offwhite/90 backdrop-blur-md border-b border-navy/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
+            
+            <!-- Logotipo Tipográfico Autoral -->
             <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="Laundry Box - Página Inicial">
-                <div class="w-10 h-10 rounded-lg bg-navy flex items-center justify-center text-teal group-hover:bg-navy-mid transition-colors shadow-sm">
+                <div class="w-10 h-10 rounded-lg bg-navy flex items-center justify-center text-teal group-hover:bg-navy-mid transition-all shadow-sm">
                     <i class="fa-solid fa-box-open text-xl" aria-hidden="true"></i>
                 </div>
                 <div class="flex flex-col">
-                    <span class="font-heading font-extrabold text-xl text-navy leading-none tracking-tight">LAUNDRY<span class="text-teal">BOX</span></span>
-                    <span class="text-[10px] font-semibold text-bodyGray uppercase tracking-widest mt-0.5">Perdizes • SP</span>
+                    <span class="font-serif font-bold text-2xl text-navy tracking-tight leading-none">Laundry<span class="text-teal font-sans font-light">Box</span></span>
+                    <span class="text-[10px] font-semibold text-textGray uppercase tracking-widest mt-0.5">Perdizes • SP</span>
                 </div>
             </a>
 
-            <!-- Desktop Menu -->
-            <nav class="hidden md:flex items-center space-x-8 font-heading text-sm font-semibold text-navy" aria-label="Navegação Principal">
+            <!-- Navegação Desktop -->
+            <nav class="hidden md:flex items-center space-x-8 font-sans text-sm font-medium text-navy" aria-label="Navegação Principal">
                 <a href="#apresentacao" class="hover:text-teal transition-colors py-1">A Lavanderia</a>
                 <a href="#como-funciona" class="hover:text-teal transition-colors py-1">Como Funciona</a>
                 <a href="#servicos" class="hover:text-teal transition-colors py-1">Serviços</a>
-                <a href="#faq" class="hover:text-teal transition-colors py-1">Dúvidas Frequentes</a>
+                <a href="#faq" class="hover:text-teal transition-colors py-1">FAQ</a>
                 <a href="#localizacao" class="hover:text-teal transition-colors py-1">Localização</a>
             </nav>
 
-            <!-- CTA Desktop Button -->
+            <!-- Botão de Ação Direta -->
             <div class="hidden md:flex items-center">
-                <a href="https://wa.me/5511985853188?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20informações%20sobre%20os%20serviços." 
+                <a href="https://wa.me/5511985853188?text=Olá!%20Vim%20pelo%20site%20da%20Laundry%20Box%20e%20gostaria%20de%20informações." 
                    target="_blank" 
                    rel="noopener noreferrer" 
-                   class="bg-teal hover:bg-teal-hover text-white font-heading font-bold px-5 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
-                    <span>Falar no WhatsApp</span>
+                   class="bg-navy hover:bg-navy-mid text-white font-sans text-sm font-bold px-5 py-2.5 rounded-lg transition-all shadow-sm hover:shadow-md flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-teal text-base" aria-hidden="true"></i>
+                    <span>Contato WhatsApp</span>
                 </a>
             </div>
 
-            <!-- Mobile Hamburger Button -->
+            <!-- Botão Menu Mobile -->
             <button id="mobile-menu-btn" 
                     type="button" 
-                    class="md:hidden text-navy p-2 rounded-lg hover:bg-slateBg focus:outline-none" 
+                    class="md:hidden text-navy p-2 rounded-lg hover:bg-surfaceBg focus:outline-none" 
                     aria-expanded="false" 
-                    aria-controls="mobile-menu"
+                    aria-controls="mobile-menu" 
                     aria-label="Abrir menu de navegação">
                 <i class="fa-solid fa-bars text-2xl" id="menu-icon-open"></i>
                 <i class="fa-solid fa-xmark text-2xl hidden" id="menu-icon-close"></i>
             </button>
         </div>
 
-        <!-- Mobile Navigation Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
-            <a href="#apresentacao" class="mobile-nav-link block py-2 text-navy font-heading font-semibold hover:text-teal border-b border-gray-100">A Lavanderia</a>
-            <a href="#como-funciona" class="mobile-nav-link block py-2 text-navy font-heading font-semibold hover:text-teal border-b border-gray-100">Como Funciona</a>
-            <a href="#servicos" class="mobile-nav-link block py-2 text-navy font-heading font-semibold hover:text-teal border-b border-gray-100">Serviços</a>
-            <a href="#faq" class="mobile-nav-link block py-2 text-navy font-heading font-semibold hover:text-teal border-b border-gray-100">Dúvidas Frequentes</a>
-            <a href="#localizacao" class="mobile-nav-link block py-2 text-navy font-heading font-semibold hover:text-teal border-b border-gray-100">Localização</a>
+        <!-- Menu Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-offwhite border-b border-navy/10 px-4 pt-3 pb-6 space-y-3">
+            <a href="#apresentacao" class="mobile-nav-link block py-2 text-navy font-medium border-b border-navy/5">A Lavanderia</a>
+            <a href="#como-funciona" class="mobile-nav-link block py-2 text-navy font-medium border-b border-navy/5">Como Funciona</a>
+            <a href="#servicos" class="mobile-nav-link block py-2 text-navy font-medium border-b border-navy/5">Serviços</a>
+            <a href="#faq" class="mobile-nav-link block py-2 text-navy font-medium border-b border-navy/5">Perguntas Frequentes</a>
+            <a href="#localizacao" class="mobile-nav-link block py-2 text-navy font-medium border-b border-navy/5">Localização</a>
             <div class="pt-2">
-                <a href="https://wa.me/5511985853188?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20informações%20sobre%20os%20serviços." 
+                <a href="https://wa.me/5511985853188?text=Olá!%20Vim%20pelo%20site%20da%20Laundry%20Box%20e%20gostaria%20de%20informações." 
                    target="_blank" 
                    rel="noopener noreferrer" 
-                   class="w-full bg-teal text-white font-heading font-bold py-3 rounded-lg flex items-center justify-center gap-2 shadow-sm">
-                    <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
-                    <span>Atendimento no WhatsApp</span>
+                   class="w-full bg-navy text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-teal" aria-hidden="true"></i>
+                    <span>Falar no WhatsApp</span>
                 </a>
             </div>
         </div>
     </header>
 
     <main class="flex-grow">
-        <!-- SECTION 1: HERO (FIRST FOLD) -->
-        <section class="relative bg-gradient-to-b from-white via-slateBg to-slateBg pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden">
+        <!-- 1. HERO SECTION (PRIMEIRA DOBRA EDITORIAL ASSIMÉTRICA) -->
+        <section class="py-12 md:py-20 lg:py-24 border-b border-navy/5 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
                     
-                    <!-- Text Content -->
-                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        <div class="inline-flex items-center gap-2 bg-teal-light text-navy px-3.5 py-1.5 rounded-full border border-teal/20 text-xs font-semibold uppercase tracking-wider">
-                            <span class="w-2 h-2 rounded-full bg-teal animate-pulse"></span>
-                            Atendimento presencial e apoio rápido
+                    <!-- Conteúdo Textual com Tipografia Distinta -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-surfaceBg text-navy px-3 py-1 rounded-md text-xs font-semibold tracking-wide">
+                            <i class="fa-solid fa-location-dot text-teal" aria-hidden="true"></i>
+                            <span>Perdizes, São Paulo — SP</span>
                         </div>
-                        
-                        <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-navy leading-tight tracking-tight">
-                            Cuidado profissional para suas roupas no coração de <span class="text-teal underline decoration-teal/30 underline-offset-4">Perdizes</span>.
+
+                        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-navy leading-[1.1] tracking-tight">
+                            Cuidado profissional e dedicação com cada peça do seu dia a dia.
                         </h1>
 
-                        <p class="text-base sm:text-lg text-bodyGray max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                            A <strong class="text-navy font-semibold">Laundry Box</strong> combina a praticidade das lavagens modernas com o zelo que suas peças do dia a dia ou tecidos delicados realmente merecem.
+                        <p class="text-base sm:text-lg text-textGray max-w-2xl leading-relaxed">
+                            A <strong class="text-navy font-medium">Laundry Box</strong> oferece praticidade, insumos selecionados e um atendimento acolhedor para cuidar das suas roupas na Rua Cardoso de Almeida.
                         </p>
 
-                        <!-- Key Benefits Tags -->
-                        <div class="pt-2 pb-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs sm:text-sm font-semibold text-navy">
-                            <span class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-md shadow-sm border border-gray-200/80">
-                                <i class="fa-solid fa-circle-check text-teal" aria-hidden="true"></i> R. Cardoso de Almeida, 1311
+                        <!-- Destaques Informativos Confirmados -->
+                        <div class="pt-2 flex flex-wrap gap-4 text-xs font-semibold text-navy">
+                            <span class="bg-white px-3.5 py-2 rounded-lg border border-navy/10 flex items-center gap-2 shadow-xs">
+                                <i class="fa-solid fa-check text-teal" aria-hidden="true"></i> Lavagem e Secagem Eficiente
                             </span>
-                            <span class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-md shadow-sm border border-gray-200/80">
-                                <i class="fa-solid fa-circle-check text-teal" aria-hidden="true"></i> Equipamentos Modernos
-                            </span>
-                            <span class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-md shadow-sm border border-gray-200/80">
-                                <i class="fa-solid fa-circle-check text-teal" aria-hidden="true"></i> Higienização Eficiente
+                            <span class="bg-white px-3.5 py-2 rounded-lg border border-navy/10 flex items-center gap-2 shadow-xs">
+                                <i class="fa-solid fa-check text-teal" aria-hidden="true"></i> Atendimento Presencial e Direct
                             </span>
                         </div>
 
-                        <!-- CTA Group -->
-                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                            <a href="https://wa.me/5511985853188?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Laundry%20Box." 
+                        <!-- Chamadas para Ação -->
+                        <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                            <a href="https://wa.me/5511985853188?text=Olá!%20Gostaria%20de%20informações%20sobre%20os%20serviços%20da%20Laundry%20Box." 
                                target="_blank" 
                                rel="noopener noreferrer" 
-                               class="w-full sm:w-auto bg-teal hover:bg-teal-hover text-white font-heading font-bold px-8 py-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-3 text-base">
+                               class="bg-teal hover:bg-teal-hover text-white font-bold px-8 py-4 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-3 text-base">
                                 <i class="fa-brands fa-whatsapp text-2xl" aria-hidden="true"></i>
-                                <span>Falar com Atendimento</span>
+                                <span>Falar no WhatsApp</span>
                             </a>
                             <a href="#como-funciona" 
-                               class="w-full sm:w-auto bg-white hover:bg-gray-50 text-navy font-heading font-bold px-6 py-4 rounded-lg border border-gray-300 transition-all duration-200 flex items-center justify-center gap-2 text-base shadow-sm">
-                                <span>Como Funciona</span>
-                                <i class="fa-solid fa-arrow-down text-sm" aria-hidden="true"></i>
+                               class="bg-white hover:bg-surfaceBg text-navy font-bold px-6 py-4 rounded-xl border border-navy/15 transition-all flex items-center justify-center gap-2 text-base">
+                                <span>Conhecer o Processo</span>
+                                <i class="fa-solid fa-arrow-down text-xs" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Editorial Image Visual -->
-                    <div class="lg:col-span-5 relative">
-                        <div class="relative mx-auto max-w-md lg:max-w-none">
-                            <div class="absolute -inset-2 bg-navy-mid/10 rounded-2xl transform rotate-1 blur-sm"></div>
-                            <div class="relative bg-white p-3 rounded-2xl shadow-xl border border-gray-100">
-                                <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=800&q=80" 
-                                     alt="Máquinas de lavar roupas modernas em ambiente limpo e organizado" 
-                                     class="rounded-xl w-full h-[340px] sm:h-[420px] object-cover"
+                    <!-- Visual Editorial Fotográfico -->
+                    <div class="lg:col-span-5">
+                        <div class="relative">
+                            <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-navy/10 bg-surfaceBg">
+                                <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=1000&q=80" 
+                                     alt="Ambiente limpo e organizado de lavanderia profissional" 
+                                     class="w-full h-full object-cover"
                                      loading="eager"
-                                     onerror="this.onerror=null; this.src='https://placehold.co/800x600/102C46/FFFFFF?text=Laundry+Box';">
-                                
-                                <!-- Floating Highlight Box -->
-                                <div class="absolute -bottom-5 -left-2 sm:-left-6 bg-navy text-white p-4 rounded-xl shadow-lg border border-navy-mid/50 flex items-center gap-3 max-w-[260px]">
-                                    <div class="w-10 h-10 rounded-full bg-teal/20 text-teal flex items-center justify-center shrink-0">
-                                        <i class="fa-solid fa-shirt text-lg" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="text-xs">
-                                        <p class="font-bold font-heading text-white">Praticidade no seu dia</p>
-                                        <p class="text-gray-300">Roupas limpas, secas e cheirosas com agilidade.</p>
-                                    </div>
-                                </div>
+                                     onerror="this.onerror=null; this.src='https://placehold.co/800x1000/102C46/FFFFFF?text=Laundry+Box';">
+                            </div>
+                            
+                            <!-- Card Sobreposto Flutuante com Detalhe do Endereço -->
+                            <div class="absolute -bottom-6 -left-4 sm:-left-6 bg-navy text-white p-5 rounded-xl shadow-xl max-w-[280px] border border-navy-mid/50">
+                                <p class="text-xs uppercase tracking-widest text-teal font-bold mb-1">Unidade Perdizes</p>
+                                <p class="text-sm font-serif font-bold text-white">Rua Cardoso de Almeida, 1311</p>
+                                <p class="text-xs text-gray-300 mt-1">CEP: 05013-001 • São Paulo — SP</p>
                             </div>
                         </div>
                     </div>
@@ -272,56 +260,47 @@
             </div>
         </section>
 
-        <!-- SECTION 2: APRESENTAÇÃO DA LAVANDERIA -->
-        <section id="apresentacao" class="py-16 bg-white border-t border-b border-gray-200/60">
+        <!-- 2. APRESENTAÇÃO DA LAVANDERIA -->
+        <section id="apresentacao" class="py-16 md:py-24 bg-white border-b border-navy/5">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     
-                    <div class="lg:col-span-5 order-2 lg:order-1">
-                        <div class="grid grid-cols-2 gap-4">
-                            <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=600&q=80" 
-                                 alt="Roupas limpas dobradas com cuidado" 
-                                 class="rounded-lg object-cover h-48 w-full shadow-md"
-                                 loading="lazy"
-                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/102C46/FFFFFF?text=Laundry+Box';">
-                            <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=600&q=80" 
-                                 alt="Processo de secagem de roupas" 
-                                 class="rounded-lg object-cover h-48 w-full shadow-md mt-6"
-                                 loading="lazy"
-                                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/245B78/FFFFFF?text=Cuidado+Especial';">
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="text-teal font-semibold text-xs uppercase tracking-widest">Sobre a Laundry Box</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl text-navy">
+                            Sua lavanderia no bairro de Perdizes com padrão de excelência.
+                        </h2>
+                        <p class="text-textGray text-base leading-relaxed">
+                            Localizada no coração de Perdizes, a <strong class="text-navy">Laundry Box</strong> foi pensada para quem valoriza praticidade sem abrir mão do tratamento adequado para cada tecido.
+                        </p>
+                        <p class="text-textGray text-base leading-relaxed">
+                            Com processos organizados e insumos eficientes, garantimos que suas roupas do dia a dia ou peças que exigem atenção especial sejam tratadas com todo o cuidado necessário.
+                        </p>
+
+                        <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-offwhite border border-navy/5">
+                                <h3 class="font-bold text-navy text-sm mb-1">Localização Prática</h3>
+                                <p class="text-xs text-textGray">Fácil acesso na Rua Cardoso de Almeida, próximo ao seu cotidiano.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-offwhite border border-navy/5">
+                                <h3 class="font-bold text-navy text-sm mb-1">Atendimento Transparente</h3>
+                                <p class="text-xs text-textGray">Orientações claras para lavagem, secagem e conservação.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="lg:col-span-7 order-1 lg:order-2 space-y-5">
-                        <span class="text-teal font-heading font-bold text-xs uppercase tracking-widest">Sobre a Laundry Box</span>
-                        <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-navy">
-                            Sua solução em lavanderia na região de Perdizes
-                        </h2>
-                        <p class="text-bodyGray text-base leading-relaxed">
-                            Fundada para facilitar a rotina de quem busca eficiência e qualidade, a <strong class="text-navy">Laundry Box</strong> oferece uma estrutura preparada para tratar das suas peças diárias e artigos especiais com a máxima eficiência.
-                        </p>
-                        <p class="text-bodyGray text-base leading-relaxed">
-                            Localizada na <strong class="text-navy">Rua Cardoso de Almeida, 1311</strong>, nossa unidade conta com ambiente acessível e prático. Seja para lavar o vestuário da semana ou cuidar de peças pesadas, garantimos processos estruturados e produtos de alto padrão.
-                        </p>
-                        <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded bg-slateBg text-navy flex items-center justify-center shrink-0 mt-1">
-                                    <i class="fa-solid fa-soap text-teal" aria-hidden="true"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-heading font-bold text-navy text-sm">Produtos de Qualidade</h3>
-                                    <p class="text-xs text-bodyGray">Insumos selecionados para preservar as fibras e as cores.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded bg-slateBg text-navy flex items-center justify-center shrink-0 mt-1">
-                                    <i class="fa-solid fa-clock text-teal" aria-hidden="true"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-heading font-bold text-navy text-sm">Agilidade e Conveniência</h3>
-                                    <p class="text-xs text-bodyGray">Processos otimizados para economizar seu tempo.</p>
-                                </div>
-                            </div>
+                    <div class="lg:col-span-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Roupas cuidadas e limpas dobradas" 
+                                 class="rounded-xl object-cover h-64 w-full shadow-md"
+                                 loading="lazy"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x600/102C46/FFFFFF?text=Laundry+Box';">
+                            <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Processo de cuidado com peças de vestuário" 
+                                 class="rounded-xl object-cover h-64 w-full shadow-md mt-8"
+                                 loading="lazy"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x600/245B78/FFFFFF?text=Cuidados';">
                         </div>
                     </div>
 
@@ -329,80 +308,72 @@
             </div>
         </section>
 
-        <!-- SECTION 3: COMO FUNCIONA O SERVIÇO -->
-        <section id="como-funciona" class="py-16 bg-slateBg">
+        <!-- 3. COMO FUNCIONA (4 ETAPAS SEQUENCIAIS EDITORIAIS) -->
+        <section id="como-funciona" class="py-16 md:py-24 bg-surfaceBg border-b border-navy/5">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
-                    <span class="text-teal font-heading font-bold text-xs uppercase tracking-widest">Simplicidade do Início ao Fim</span>
-                    <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-navy">
-                        Como funciona o nosso atendimento
+                <div class="max-w-3xl mb-16 space-y-3">
+                    <span class="text-teal font-semibold text-xs uppercase tracking-widest">Passo a Passo</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-navy">
+                        Como funciona o atendimento
                     </h2>
-                    <p class="text-bodyGray text-sm sm:text-base">
-                        Siga quatro etapas simples para manter suas roupas sempre prontas para o uso.
+                    <p class="text-textGray text-base">
+                        Quatro etapas simples para entregar suas roupas limpas e renovadas.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Step 1 -->
-                    <div class="bg-white p-6 rounded-xl border border-gray-200/80 shadow-sm relative flex flex-col justify-between">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Etapa 1 -->
+                    <div class="bg-white p-6 rounded-xl border border-navy/5 shadow-xs flex flex-col justify-between">
                         <div>
-                            <div class="w-12 h-12 rounded-lg bg-navy text-teal font-heading font-bold text-xl flex items-center justify-center mb-5">
-                                01
-                            </div>
-                            <h3 class="font-heading font-bold text-lg text-navy mb-2">Traga suas roupas</h3>
-                            <p class="text-sm text-bodyGray leading-relaxed">
-                                Visite nossa unidade em Perdizes com as peças que deseja lavar ou secar.
+                            <span class="text-2xl font-serif font-bold text-teal mb-3 block">01</span>
+                            <h3 class="font-bold text-navy text-lg mb-2">Traga suas roupas</h3>
+                            <p class="text-xs text-textGray leading-relaxed">
+                                Traga suas peças à nossa unidade na Rua Cardoso de Almeida, 1311 em Perdizes.
                             </p>
                         </div>
-                        <div class="mt-6 pt-4 border-t border-gray-100 text-xs text-navy font-semibold flex items-center gap-1">
-                            <i class="fa-solid fa-map-pin text-teal" aria-hidden="true"></i> R. Cardoso de Almeida, 1311
+                        <div class="mt-6 pt-4 border-t border-gray-100 text-[11px] font-semibold text-navy flex items-center gap-1.5">
+                            <i class="fa-solid fa-map-pin text-teal" aria-hidden="true"></i> Rua Cardoso de Almeida
                         </div>
                     </div>
 
-                    <!-- Step 2 -->
-                    <div class="bg-white p-6 rounded-xl border border-gray-200/80 shadow-sm relative flex flex-col justify-between">
+                    <!-- Etapa 2 -->
+                    <div class="bg-white p-6 rounded-xl border border-navy/5 shadow-xs flex flex-col justify-between">
                         <div>
-                            <div class="w-12 h-12 rounded-lg bg-navy text-teal font-heading font-bold text-xl flex items-center justify-center mb-5">
-                                02
-                            </div>
-                            <h3 class="font-heading font-bold text-lg text-navy mb-2">Escolha o serviço</h3>
-                            <p class="text-sm text-bodyGray leading-relaxed">
-                                Selecione o ciclo ideal de lavagem, secagem ou o tratamento para peças específicas.
+                            <span class="text-2xl font-serif font-bold text-teal mb-3 block">02</span>
+                            <h3 class="font-bold text-navy text-lg mb-2">Escolha o serviço</h3>
+                            <p class="text-xs text-textGray leading-relaxed">
+                                Selecione o ciclo de lavagem, secagem ou o tratamento indicado para suas roupas.
                             </p>
                         </div>
-                        <div class="mt-6 pt-4 border-t border-gray-100 text-xs text-navy font-semibold flex items-center gap-1">
-                            <i class="fa-solid fa-list-check text-teal" aria-hidden="true"></i> Opções Sob Medida
+                        <div class="mt-6 pt-4 border-t border-gray-100 text-[11px] font-semibold text-navy flex items-center gap-1.5">
+                            <i class="fa-solid fa-sliders text-teal" aria-hidden="true"></i> Opções Adaptadas
                         </div>
                     </div>
 
-                    <!-- Step 3 -->
-                    <div class="bg-white p-6 rounded-xl border border-gray-200/80 shadow-sm relative flex flex-col justify-between">
+                    <!-- Etapa 3 -->
+                    <div class="bg-white p-6 rounded-xl border border-navy/5 shadow-xs flex flex-col justify-between">
                         <div>
-                            <div class="w-12 h-12 rounded-lg bg-navy text-teal font-heading font-bold text-xl flex items-center justify-center mb-5">
-                                03
-                            </div>
-                            <h3 class="font-heading font-bold text-lg text-navy mb-2">Processo de lavagem</h3>
-                            <p class="text-sm text-bodyGray leading-relaxed">
-                                Suas roupas passam por máquinas tecnológicas com dosagem equilibrada de sabão e amaciante.
+                            <span class="text-2xl font-serif font-bold text-teal mb-3 block">03</span>
+                            <h3 class="font-bold text-navy text-lg mb-2">Processo de lavagem</h3>
+                            <p class="text-xs text-textGray leading-relaxed">
+                                Suas roupas passam por higienização com insumos de qualidade e dosagem equilibrada.
                             </p>
                         </div>
-                        <div class="mt-6 pt-4 border-t border-gray-100 text-xs text-navy font-semibold flex items-center gap-1">
-                            <i class="fa-solid fa-temperature-half text-teal" aria-hidden="true"></i> Higienização Adequada
+                        <div class="mt-6 pt-4 border-t border-gray-100 text-[11px] font-semibold text-navy flex items-center gap-1.5">
+                            <i class="fa-solid fa-soap text-teal" aria-hidden="true"></i> Higienização Cuidada
                         </div>
                     </div>
 
-                    <!-- Step 4 -->
-                    <div class="bg-white p-6 rounded-xl border border-gray-200/80 shadow-sm relative flex flex-col justify-between">
+                    <!-- Etapa 4 -->
+                    <div class="bg-white p-6 rounded-xl border border-navy/5 shadow-xs flex flex-col justify-between">
                         <div>
-                            <div class="w-12 h-12 rounded-lg bg-navy text-teal font-heading font-bold text-xl flex items-center justify-center mb-5">
-                                04
-                            </div>
-                            <h3 class="font-heading font-bold text-lg text-navy mb-2">Roupas prontas</h3>
-                            <p class="text-sm text-bodyGray leading-relaxed">
-                                Peças limpas, secas e prontas para serem guardadas ou utilizadas no seu cotidiano.
+                            <span class="text-2xl font-serif font-bold text-teal mb-3 block">04</span>
+                            <h3 class="font-bold text-navy text-lg mb-2">Roupas prontas</h3>
+                            <p class="text-xs text-textGray leading-relaxed">
+                                Peças limpas, secas e cheirosas, prontas para seu uso e rotina.
                             </p>
                         </div>
-                        <div class="mt-6 pt-4 border-t border-gray-100 text-xs text-navy font-semibold flex items-center gap-1">
+                        <div class="mt-6 pt-4 border-t border-gray-100 text-[11px] font-semibold text-navy flex items-center gap-1.5">
                             <i class="fa-solid fa-sparkles text-teal" aria-hidden="true"></i> Prontas para Uso
                         </div>
                     </div>
@@ -410,202 +381,203 @@
             </div>
         </section>
 
-        <!-- SECTION 4: SERVIÇOS -->
-        <section id="servicos" class="py-16 bg-white">
+        <!-- 4. SERVIÇOS (GRID EDITORIAL DIVERSIFICADO) -->
+        <section id="servicos" class="py-16 md:py-24 bg-white border-b border-navy/5">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
-                    <span class="text-teal font-heading font-bold text-xs uppercase tracking-widest">Nossas Soluções</span>
-                    <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-navy">
+                <div class="max-w-3xl mb-16 space-y-3">
+                    <span class="text-teal font-semibold text-xs uppercase tracking-widest">Nossas Soluções</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-navy">
                         Serviços para todas as suas necessidades
                     </h2>
-                    <p class="text-bodyGray text-sm sm:text-base">
-                        Estrutura completa para atender desde o vestuário básico até itens mais complexos.
+                    <p class="text-textGray text-base">
+                        Consulte os serviços disponíveis para vestuário e itens têxteis.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Service 1 -->
-                    <div class="bg-slateBg rounded-xl overflow-hidden border border-gray-200/70 shadow-sm flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=600&q=80" 
-                             alt="Lavagem de roupas em máquinas profissionais" 
-                             class="h-48 w-full object-cover"
-                             loading="lazy"
-                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/102C46/FFFFFF?text=Lavagem';">
-                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                            <div>
-                                <h3 class="font-heading font-bold text-xl text-navy mb-2">Serviços de Lavagem</h3>
-                                <p class="text-sm text-bodyGray leading-relaxed">
-                                    Lavagem profunda para roupas do dia a dia, uniformes, cama, mesa e banho. Remoção eficiente de sujeiras preservando os tecidos.
+                    <!-- Serviço 1: Lavagem -->
+                    <div class="bg-offwhite rounded-2xl overflow-hidden border border-navy/5 flex flex-col justify-between">
+                        <div>
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Serviços de Lavagem de roupas" 
+                                     class="w-full h-full object-cover"
+                                     loading="lazy"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/102C46/FFFFFF?text=Lavagem';">
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="font-serif text-2xl text-navy">Lavagem de Roupas</h3>
+                                <p class="text-xs text-textGray leading-relaxed">
+                                    Processo de lavagem profunda para roupas do dia a dia, peças casuais, vestuário de trabalho e peças de cama, mesa e banho.
                                 </p>
                             </div>
-                            <ul class="text-xs text-navy space-y-2 pt-2 border-t border-gray-200">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal" aria-hidden="true"></i> Peças do dia a dia</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal" aria-hidden="true"></i> Roupas de cama e banho</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal" aria-hidden="true"></i> Dosagem correta de insumos</li>
-                            </ul>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <a href="https://wa.me/5511985853188?text=Olá!%20Gostaria%20de%20informações%20sobre%20o%20serviço%20de%20lavagem." 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="inline-flex items-center gap-2 text-xs font-bold text-navy hover:text-teal transition-colors">
+                                <span>Consultar pelo WhatsApp</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Service 2 -->
-                    <div class="bg-slateBg rounded-xl overflow-hidden border border-gray-200/70 shadow-sm flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=600&q=80" 
-                             alt="Secagem de roupas eficiente em secadora" 
-                             class="h-48 w-full object-cover"
-                             loading="lazy"
-                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/245B78/FFFFFF?text=Secagem';">
-                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                            <div>
-                                <h3 class="font-heading font-bold text-xl text-navy mb-2">Serviços de Secagem</h3>
-                                <p class="text-sm text-bodyGray leading-relaxed">
-                                    Secadoras modernas de alta capacidade que deixam suas roupas macias e prontas para dobrar em curto espaço de tempo.
+                    <!-- Serviço 2: Secagem -->
+                    <div class="bg-offwhite rounded-2xl overflow-hidden border border-navy/5 flex flex-col justify-between">
+                        <div>
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Serviço de secagem eficiente" 
+                                     class="w-full h-full object-cover"
+                                     loading="lazy"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/245B78/FFFFFF?text=Secagem';">
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="font-serif text-2xl text-navy">Secagem Eficiente</h3>
+                                <p class="text-xs text-textGray leading-relaxed">
+                                    Equipamentos modernos que garantem a secagem correta das peças, deixando-as prontas para serem dobradas com maciez.
                                 </p>
                             </div>
-                            <ul class="text-xs text-navy space-y-2 pt-2 border-t border-gray-200">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal" aria-hidden="true"></i> Secagem rápida e homogênea</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal" aria-hidden="true"></i> Controle de temperatura</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal" aria-hidden="true"></i> Redução de vincos e amassados</li>
-                            </ul>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <a href="https://wa.me/5511985853188?text=Olá!%20Gostaria%20de%20informações%20sobre%20o%20serviço%20de%20secagem." 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="inline-flex items-center gap-2 text-xs font-bold text-navy hover:text-teal transition-colors">
+                                <span>Consultar pelo WhatsApp</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Service 3 -->
-                    <div class="bg-slateBg rounded-xl overflow-hidden border border-gray-200/70 shadow-sm flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=600&q=80" 
-                             alt="Cuidado especializado com tecidos delicados" 
-                             class="h-48 w-full object-cover"
-                             loading="lazy"
-                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/36B8A5/FFFFFF?text=Especializados';">
-                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                            <div>
-                                <h3 class="font-heading font-bold text-xl text-navy mb-2">Peças Especializadas</h3>
-                                <p class="text-sm text-bodyGray leading-relaxed">
-                                    Atenção dedicada para itens que exigem cuidados especiais e orientações específicas antes do manuseio.
+                    <!-- Serviço 3: Especializados -->
+                    <div class="bg-offwhite rounded-2xl overflow-hidden border border-navy/5 flex flex-col justify-between">
+                        <div>
+                            <div class="h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Cuidados com peças especializadas" 
+                                     class="w-full h-full object-cover"
+                                     loading="lazy"
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/36B8A5/FFFFFF?text=Especializados';">
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="font-serif text-2xl text-navy">Peças Especializadas</h3>
+                                <p class="text-xs text-textGray leading-relaxed">
+                                    Tratamento e atenção dedicada para itens delicados ou com especificações de lavagem diferenciadas.
                                 </p>
                             </div>
-                            <ul class="text-xs text-navy space-y-2 pt-2 border-t border-gray-200">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal" aria-hidden="true"></i> Avaliação das etiquetas</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal" aria-hidden="true"></i> Cuidado com fibras delicadas</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal" aria-hidden="true"></i> Orientação presencial dedicada</li>
-                            </ul>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <a href="https://wa.me/5511985853188?text=Olá!%20Gostaria%20de%20consultar%20sobre%20uma%20peça%20especializada." 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="inline-flex items-center gap-2 text-xs font-bold text-navy hover:text-teal transition-colors">
+                                <span>Consultar pelo WhatsApp</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </div>
-                </div>
-
-                <div class="mt-12 text-center bg-navy-mid/5 p-6 rounded-xl border border-navy-mid/10">
-                    <p class="text-sm text-navy font-semibold mb-3">
-                        Dúvidas sobre o tratamento ideal para uma peça específica?
-                    </p>
-                    <a href="https://wa.me/5511985853188?text=Olá!%20Gostaria%20de%20consultar%20sobre%20a%20lavagem%20de%20uma%20peça%20específica." 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="inline-flex items-center gap-2 text-teal hover:text-navy font-heading font-bold text-sm transition-colors">
-                        <span>Consulte nossa equipe pelo WhatsApp</span>
-                        <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
-                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 5: FAQ INTERATIVO -->
-        <section id="faq" class="py-16 bg-slateBg">
+        <!-- 5. PERGUNTAS FREQUENTES (FAQ ACESSÍVEL) -->
+        <section id="faq" class="py-16 md:py-24 bg-surfaceBg border-b border-navy/5">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12 space-y-3">
-                    <span class="text-teal font-heading font-bold text-xs uppercase tracking-widest">Esclareça suas Dúvidas</span>
-                    <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-navy">
+                <div class="text-center mb-14 space-y-3">
+                    <span class="text-teal font-semibold text-xs uppercase tracking-widest">Tire suas Dúvidas</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-navy">
                         Perguntas Frequentes
                     </h2>
-                    <p class="text-bodyGray text-sm">
-                        Informações claras sobre o atendimento na Laundry Box.
+                    <p class="text-textGray text-sm">
+                        Respostas para as principais dúvidas sobre os serviços da Laundry Box.
                     </p>
                 </div>
 
-                <!-- Accordion Container -->
                 <div class="space-y-4" id="faq-accordion">
-                    <!-- FAQ 1 -->
-                    <div class="bg-white rounded-lg border border-gray-200/80 overflow-hidden shadow-sm">
+                    <!-- Item 1 -->
+                    <div class="bg-white rounded-xl border border-navy/5 overflow-hidden shadow-xs">
                         <button type="button" 
-                                class="faq-toggle w-full px-6 py-4 text-left font-heading font-bold text-navy hover:text-teal flex items-center justify-between transition-colors focus:outline-none"
+                                class="faq-toggle w-full px-6 py-5 text-left font-bold text-navy hover:text-teal flex items-center justify-between transition-colors focus:outline-none"
                                 aria-expanded="false" 
-                                aria-controls="faq-answer-1" 
+                                aria-controls="faq-ans-1" 
                                 id="faq-btn-1">
-                            <span>Onde fica localizada a Laundry Box?</span>
-                            <i class="fa-solid fa-chevron-down text-sm text-teal transform transition-transform duration-200"></i>
+                            <span class="text-base font-sans">Qual o endereço da Laundry Box em Perdizes?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-teal transition-transform duration-200" aria-hidden="true"></i>
                         </button>
-                        <div id="faq-answer-1" class="hidden px-6 pb-4 pt-1 text-sm text-bodyGray border-t border-gray-100" aria-labelledby="faq-btn-1">
-                            Estamos localizados na <strong class="text-navy">Rua Cardoso de Almeida, 1311</strong>, no bairro de Perdizes, São Paulo — SP (CEP: 05013-001).
+                        <div id="faq-ans-1" class="hidden px-6 pb-5 pt-1 text-xs sm:text-sm text-textGray border-t border-gray-100 leading-relaxed" aria-labelledby="faq-btn-1">
+                            Nossa unidade está localizada na <strong class="text-navy">Rua Cardoso de Almeida, 1311</strong>, no bairro de Perdizes, São Paulo — SP, CEP 05013-001.
                         </div>
                     </div>
 
-                    <!-- FAQ 2 -->
-                    <div class="bg-white rounded-lg border border-gray-200/80 overflow-hidden shadow-sm">
+                    <!-- Item 2 -->
+                    <div class="bg-white rounded-xl border border-navy/5 overflow-hidden shadow-xs">
                         <button type="button" 
-                                class="faq-toggle w-full px-6 py-4 text-left font-heading font-bold text-navy hover:text-teal flex items-center justify-between transition-colors focus:outline-none"
+                                class="faq-toggle w-full px-6 py-5 text-left font-bold text-navy hover:text-teal flex items-center justify-between transition-colors focus:outline-none"
                                 aria-expanded="false" 
-                                aria-controls="faq-answer-2" 
+                                aria-controls="faq-ans-2" 
                                 id="faq-btn-2">
-                            <span>Como posso entrar em contato ou confirmar horários?</span>
-                            <i class="fa-solid fa-chevron-down text-sm text-teal transform transition-transform duration-200"></i>
+                            <span class="text-base font-sans">Como entrar em contato via WhatsApp?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-teal transition-transform duration-200" aria-hidden="true"></i>
                         </button>
-                        <div id="faq-answer-2" class="hidden px-6 pb-4 pt-1 text-sm text-bodyGray border-t border-gray-100" aria-labelledby="faq-btn-2">
-                            Você pode falar diretamente conosco via WhatsApp pelo número <strong class="text-navy">(11) 98585-3188</strong> para obter suporte rápido sobre horários atualizados e funcionamento.
+                        <div id="faq-ans-2" class="hidden px-6 pb-5 pt-1 text-xs sm:text-sm text-textGray border-t border-gray-100 leading-relaxed" aria-labelledby="faq-btn-2">
+                            Você pode enviar uma mensagem diretamente para o nosso número de atendimento <strong class="text-navy">(11) 98585-3188</strong> ou utilizar os botões de contato disponíveis neste site.
                         </div>
                     </div>
 
-                    <!-- FAQ 3 -->
-                    <div class="bg-white rounded-lg border border-gray-200/80 overflow-hidden shadow-sm">
+                    <!-- Item 3 -->
+                    <div class="bg-white rounded-xl border border-navy/5 overflow-hidden shadow-xs">
                         <button type="button" 
-                                class="faq-toggle w-full px-6 py-4 text-left font-heading font-bold text-navy hover:text-teal flex items-center justify-between transition-colors focus:outline-none"
+                                class="faq-toggle w-full px-6 py-5 text-left font-bold text-navy hover:text-teal flex items-center justify-between transition-colors focus:outline-none"
                                 aria-expanded="false" 
-                                aria-controls="faq-answer-3" 
+                                aria-controls="faq-ans-3" 
                                 id="faq-btn-3">
-                            <span>Quais tipos de peças posso lavar?</span>
-                            <i class="fa-solid fa-chevron-down text-sm text-teal transform transition-transform duration-200"></i>
+                            <span class="text-base font-sans">Quais tipos de peças podem ser lavadas?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-teal transition-transform duration-200" aria-hidden="true"></i>
                         </button>
-                        <div id="faq-answer-3" class="hidden px-6 pb-4 pt-1 text-sm text-bodyGray border-t border-gray-100" aria-labelledby="faq-btn-3">
-                            Lavamos desde vestuário do cotidiano (camisetas, calças, roupas de treino) até itens de cama, mesa e banho. Para peças delicadas, recomendamos consultar nossa equipe presencialmente ou via mensagem.
+                        <div id="faq-ans-3" class="hidden px-6 pb-5 pt-1 text-xs sm:text-sm text-textGray border-t border-gray-100 leading-relaxed" aria-labelledby="faq-btn-3">
+                            Oferecemos lavagem e secagem para vestuário do cotidiano, itens de cama, mesa e banho, além de atendimento sob consulta para peças com necessidades específicas.
                         </div>
                     </div>
 
-                    <!-- FAQ 4 -->
-                    <div class="bg-white rounded-lg border border-gray-200/80 overflow-hidden shadow-sm">
+                    <!-- Item 4 -->
+                    <div class="bg-white rounded-xl border border-navy/5 overflow-hidden shadow-xs">
                         <button type="button" 
-                                class="faq-toggle w-full px-6 py-4 text-left font-heading font-bold text-navy hover:text-teal flex items-center justify-between transition-colors focus:outline-none"
+                                class="faq-toggle w-full px-6 py-5 text-left font-bold text-navy hover:text-teal flex items-center justify-between transition-colors focus:outline-none"
                                 aria-expanded="false" 
-                                aria-controls="faq-answer-4" 
+                                aria-controls="faq-ans-4" 
                                 id="faq-btn-4">
-                            <span>Como consultar os valores dos serviços?</span>
-                            <i class="fa-solid fa-chevron-down text-sm text-teal transform transition-transform duration-200"></i>
+                            <span class="text-base font-sans">Como consultar horários e tabela de valores?</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-teal transition-transform duration-200" aria-hidden="true"></i>
                         </button>
-                        <div id="faq-answer-4" class="hidden px-6 pb-4 pt-1 text-sm text-bodyGray border-t border-gray-100" aria-labelledby="faq-btn-4">
-                            Os valores variam de acordo com o tipo de cesto ou serviço especializado selecionado. Entre em contato via WhatsApp pelo (11) 98585-3188 para receber a tabela de valores vigente.
+                        <div id="faq-ans-4" class="hidden px-6 pb-5 pt-1 text-xs sm:text-sm text-textGray border-t border-gray-100 leading-relaxed" aria-labelledby="faq-btn-4">
+                            Entre em contato conosco pelo WhatsApp no número (11) 98585-3188 para receber as informações atualizadas sobre funcionamento e valores dos serviços.
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 6: LOCALIZAÇÃO E CONTATO COM MAPA EMBED -->
-        <section id="localizacao" class="py-16 bg-white">
+        <!-- 6. LOCALIZAÇÃO E CONTATO (MAPA EMBED E DETALHES) -->
+        <section id="localizacao" class="py-16 md:py-24 bg-white border-b border-navy/5">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     
-                    <!-- Info & Address Column -->
                     <div class="lg:col-span-5 space-y-6">
-                        <div>
-                            <span class="text-teal font-heading font-bold text-xs uppercase tracking-widest">Venha nos Visitar</span>
-                            <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-navy mt-1">
-                                Localização & Contato
-                            </h2>
-                        </div>
-
+                        <span class="text-teal font-semibold text-xs uppercase tracking-widest">Visite Nossa Unidade</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl text-navy">
+                            Localização em Perdizes
+                        </h2>
+                        
                         <div class="space-y-4 text-sm">
-                            <div class="flex items-start gap-4 p-4 rounded-lg bg-slateBg border border-gray-200/60">
-                                <div class="w-10 h-10 rounded bg-navy text-teal flex items-center justify-center shrink-0">
-                                    <i class="fa-solid fa-location-dot text-lg" aria-hidden="true"></i>
+                            <div class="p-4 rounded-xl bg-offwhite border border-navy/5 flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-navy text-teal flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-heading font-bold text-navy">Endereço</h3>
-                                    <p class="text-bodyGray mt-0.5">
+                                    <h3 class="font-bold text-navy">Endereço</h3>
+                                    <p class="text-textGray text-xs mt-0.5">
                                         Rua Cardoso de Almeida, 1311<br>
                                         Perdizes, São Paulo — SP<br>
                                         CEP: 05013-001
@@ -613,41 +585,36 @@
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-4 p-4 rounded-lg bg-slateBg border border-gray-200/60">
-                                <div class="w-10 h-10 rounded bg-navy text-teal flex items-center justify-center shrink-0">
-                                    <i class="fa-brands fa-whatsapp text-xl" aria-hidden="true"></i>
+                            <div class="p-4 rounded-xl bg-offwhite border border-navy/5 flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-navy text-teal flex items-center justify-center shrink-0">
+                                    <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-heading font-bold text-navy">Telefone / WhatsApp</h3>
-                                    <p class="text-bodyGray mt-0.5">
-                                        (11) 98585-3188
-                                    </p>
-                                    <p class="text-xs text-gray-500 mt-1">Atendimento rápido e orientações diretas.</p>
+                                    <h3 class="font-bold text-navy">WhatsApp</h3>
+                                    <p class="text-textGray text-xs mt-0.5">(11) 98585-3188</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Action Buttons -->
-                        <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                        <div class="flex flex-col sm:flex-row gap-3 pt-2">
                             <a href="https://maps.google.com/?q=-23.5385,-46.6698" 
                                target="_blank" 
                                rel="noopener noreferrer" 
-                               class="flex-1 bg-navy hover:bg-navy-mid text-white font-heading font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm text-center">
+                               class="bg-navy hover:bg-navy-mid text-white font-bold py-3 px-5 rounded-lg text-xs flex items-center justify-center gap-2 transition-colors">
                                 <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
                                 <span>Abrir no Google Maps</span>
                             </a>
                             <a href="https://wa.me/5511985853188?text=Olá!%20Gostaria%20de%20informações%20sobre%20a%20unidade%20Perdizes." 
                                target="_blank" 
                                rel="noopener noreferrer" 
-                               class="flex-1 bg-teal hover:bg-teal-hover text-white font-heading font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm text-center">
+                               class="bg-teal hover:bg-teal-hover text-white font-bold py-3 px-5 rounded-lg text-xs flex items-center justify-center gap-2 transition-colors">
                                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                                <span>WhatsApp Direto</span>
+                                <span>Mensagem no WhatsApp</span>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Interactive Map Container -->
-                    <div class="lg:col-span-7 h-[360px] sm:h-[420px] rounded-2xl overflow-hidden border border-gray-300 shadow-md relative bg-gray-100">
+                    <div class="lg:col-span-7 h-[380px] rounded-2xl overflow-hidden border border-navy/10 shadow-md bg-surfaceBg">
                         <iframe 
                             title="Mapa de localização da Laundry Box em Perdizes"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.828612711853!2d-46.67237492376182!3d-23.538500061989065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce580327f12e51%3A0x1b4b9fb756350734!2sR.%20Cardoso%20de%20Almeida%2C%201311%20-%20Perdizes%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005013-001!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
@@ -664,57 +631,55 @@
             </div>
         </section>
 
-        <!-- SECTION 7: FORMULÁRIO DE CONTATO (WHATSAPP REDIRECT) -->
-        <section class="py-16 bg-slateBg border-t border-gray-200/60">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white p-6 sm:p-10 rounded-2xl border border-gray-200/80 shadow-md">
-                    <div class="text-center mb-8 space-y-2">
-                        <span class="text-teal font-heading font-bold text-xs uppercase tracking-widest">Mensagem Direta</span>
-                        <h2 class="font-heading text-2xl font-extrabold text-navy">
-                            Envie sua dúvida para a nossa equipe
-                        </h2>
-                        <p class="text-sm text-bodyGray">
-                            Ao preencher os dados abaixo, sua mensagem será formatada e encaminhada diretamente ao nosso atendimento via WhatsApp.
+        <!-- 7. FORMULÁRIO INTELIGENTE VIA WHATSAPP -->
+        <section class="py-16 md:py-24 bg-surfaceBg border-b border-navy/5">
+            <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white p-8 sm:p-10 rounded-2xl border border-navy/5 shadow-sm space-y-6">
+                    <div class="text-center space-y-2">
+                        <span class="text-teal font-semibold text-xs uppercase tracking-widest">Atendimento Rápido</span>
+                        <h2 class="font-serif text-3xl text-navy">Fale com a nossa equipe</h2>
+                        <p class="text-xs text-textGray">
+                            Preencha os campos abaixo. Ao enviar, os dados serão formatados em uma mensagem para o nosso WhatsApp oficial.
                         </p>
                     </div>
 
-                    <form id="contact-form" class="space-y-5">
+                    <form id="contact-form" class="space-y-4">
                         <div>
-                            <label for="form-name" class="block font-heading text-xs font-bold text-navy uppercase tracking-wider mb-2">Seu Nome *</label>
+                            <label for="form-name" class="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">Seu Nome *</label>
                             <input type="text" 
                                    id="form-name" 
                                    required 
-                                   placeholder="Digite seu nome completo"
-                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal focus:border-teal text-sm text-navy placeholder-gray-400">
+                                   placeholder="Digite seu nome"
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal focus:border-teal text-sm text-navy bg-offwhite/50">
                         </div>
 
                         <div>
-                            <label for="form-phone" class="block font-heading text-xs font-bold text-navy uppercase tracking-wider mb-2">Telefone / WhatsApp *</label>
+                            <label for="form-phone" class="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">Telefone / WhatsApp *</label>
                             <input type="tel" 
                                    id="form-phone" 
                                    required 
                                    placeholder="(11) 99999-9999"
-                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal focus:border-teal text-sm text-navy placeholder-gray-400">
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal focus:border-teal text-sm text-navy bg-offwhite/50">
                         </div>
 
                         <div>
-                            <label for="form-message" class="block font-heading text-xs font-bold text-navy uppercase tracking-wider mb-2">Como podemos ajudar? *</label>
+                            <label for="form-message" class="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">Sua Mensagem *</label>
                             <textarea id="form-message" 
                                       rows="4" 
                                       required 
-                                      placeholder="Escreva sua mensagem ou dúvida sobre nossos serviços..."
-                                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal focus:border-teal text-sm text-navy placeholder-gray-400 resize-none"></textarea>
+                                      placeholder="Como podemos ajudar?"
+                                      class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal focus:border-teal text-sm text-navy bg-offwhite/50 resize-none"></textarea>
                         </div>
 
-                        <div class="bg-teal-light/60 p-3.5 rounded-lg border border-teal/20 text-xs text-navy flex items-start gap-2">
+                        <div class="p-3 rounded-lg bg-teal-soft text-[11px] text-navy flex items-start gap-2">
                             <i class="fa-solid fa-circle-info text-teal mt-0.5" aria-hidden="true"></i>
-                            <span>Ao clicar em "Encaminhar para WhatsApp", o aplicativo do WhatsApp será aberto com suas informações preenchidas.</span>
+                            <span>Você poderá conferir e ajustar a mensagem no aplicativo do WhatsApp antes de enviar.</span>
                         </div>
 
                         <button type="submit" 
-                                class="w-full bg-teal hover:bg-teal-hover text-white font-heading font-bold py-3.5 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 text-base shadow-md">
-                            <i class="fa-brands fa-whatsapp text-xl" aria-hidden="true"></i>
-                            <span>Encaminhar Mensagem para o WhatsApp</span>
+                                class="w-full bg-teal hover:bg-teal-hover text-white font-bold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm shadow-sm">
+                            <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+                            <span>Enviar via WhatsApp</span>
                         </button>
                     </form>
                 </div>
@@ -722,52 +687,46 @@
         </section>
     </main>
 
-    <!-- FOOTER INSTITUCIONAL -->
-    <footer class="bg-navy text-white pt-14 pb-8 border-t border-navy-mid">
+    <!-- 8. RODAPÉ INSTITUCIONAL -->
+    <footer class="bg-navy text-white pt-14 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-navy-mid/60">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-navy-mid/40">
                 
-                <!-- Brand Info -->
                 <div class="space-y-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded bg-teal text-navy flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-box-open text-lg"></i>
+                        <div class="w-8 h-8 rounded bg-teal text-navy flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-box-open text-base"></i>
                         </div>
-                        <span class="font-heading font-extrabold text-xl text-white tracking-tight">LAUNDRY<span class="text-teal">BOX</span></span>
+                        <span class="font-serif text-2xl text-white">Laundry<span class="text-teal font-sans">Box</span></span>
                     </div>
                     <p class="text-xs text-gray-300 leading-relaxed">
-                        Sua lavanderia completa em Perdizes. Cuidado, eficiência e comodidade para suas roupas e itens especiais.
+                        Cuidado, praticidade e eficiência para suas roupas no bairro de Perdizes, São Paulo.
                     </p>
                 </div>
 
-                <!-- Navigation Links -->
                 <div>
-                    <h3 class="font-heading font-bold text-sm uppercase tracking-wider text-teal mb-4">Navegação</h3>
+                    <h3 class="font-bold text-xs uppercase tracking-wider text-teal mb-4">Navegação</h3>
                     <ul class="space-y-2 text-xs">
                         <li><a href="#apresentacao" class="text-gray-300 hover:text-white transition-colors">A Lavanderia</a></li>
                         <li><a href="#como-funciona" class="text-gray-300 hover:text-white transition-colors">Como Funciona</a></li>
                         <li><a href="#servicos" class="text-gray-300 hover:text-white transition-colors">Serviços</a></li>
-                        <li><a href="#faq" class="text-gray-300 hover:text-white transition-colors">Perguntas Frequentes</a></li>
+                        <li><a href="#faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
                         <li><a href="#localizacao" class="text-gray-300 hover:text-white transition-colors">Localização</a></li>
                     </ul>
                 </div>
 
-                <!-- Unidade Perdizes -->
                 <div>
-                    <h3 class="font-heading font-bold text-sm uppercase tracking-wider text-teal mb-4">Unidade Perdizes</h3>
+                    <h3 class="font-bold text-xs uppercase tracking-wider text-teal mb-4">Unidade Perdizes</h3>
                     <p class="text-xs text-gray-300 leading-relaxed mb-2">
                         Rua Cardoso de Almeida, 1311<br>
                         Perdizes, São Paulo — SP<br>
                         CEP: 05013-001
                     </p>
-                    <p class="text-xs text-gray-300">
-                        <strong>WhatsApp:</strong> (11) 98585-3188
-                    </p>
+                    <p class="text-xs text-gray-300">WhatsApp: (11) 98585-3188</p>
                 </div>
 
-                <!-- Informações Legais -->
                 <div>
-                    <h3 class="font-heading font-bold text-sm uppercase tracking-wider text-teal mb-4">Privacidade & Termos</h3>
+                    <h3 class="font-bold text-xs uppercase tracking-wider text-teal mb-4">Informações Legais</h3>
                     <ul class="space-y-2 text-xs">
                         <li>
                             <button type="button" id="btn-privacy" class="text-gray-300 hover:text-white transition-colors underline focus:outline-none">
@@ -781,7 +740,7 @@
                         </li>
                         <li>
                             <button type="button" id="btn-cookie-settings" class="text-gray-300 hover:text-white transition-colors underline focus:outline-none">
-                                Gerenciar Preferências de Cookies
+                                Preferências de Cookies
                             </button>
                         </li>
                     </ul>
@@ -789,10 +748,9 @@
 
             </div>
 
-            <!-- Bottom Copyright -->
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
                 <p>&copy; <span id="current-year"></span> Laundry Box. Todos os direitos reservados.</p>
-                <p class="text-gray-500">Website institucional oficial — Perdizes, São Paulo/SP</p>
+                <p class="text-gray-400">Rua Cardoso de Almeida, 1311 - Perdizes, SP</p>
             </div>
         </div>
     </footer>
@@ -801,92 +759,87 @@
     <div id="cookie-banner" class="fixed bottom-0 inset-x-0 z-50 bg-navy/95 border-t border-navy-mid text-white p-4 shadow-2xl backdrop-blur-md hidden">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="text-xs text-gray-200 space-y-1 max-w-3xl">
-                <p class="font-heading font-bold text-sm text-teal">Aviso de Cookies e Privacidade</p>
+                <p class="font-bold text-sm text-teal">Aviso de Privacidade e Cookies</p>
                 <p>
-                    Utilizamos cookies essenciais para garantir o correto funcionamento deste website e melhorar sua experiência de navegação. Você pode aceitar todos ou gerenciar suas preferências.
+                    Utilizamos cookies essenciais para garantir o correto funcionamento do site. Você pode aceitar todos ou gerenciar suas preferências.
                 </p>
             </div>
-            <div class="flex flex-wrap items-center gap-2 shrink-0">
-                <button id="cookie-accept-all" type="button" class="bg-teal hover:bg-teal-hover text-white font-heading font-bold text-xs px-4 py-2 rounded transition-colors">
+            <div class="flex items-center gap-2 shrink-0">
+                <button id="cookie-accept-all" type="button" class="bg-teal hover:bg-teal-hover text-white font-bold text-xs px-4 py-2 rounded transition-colors">
                     Aceitar Todos
                 </button>
-                <button id="cookie-open-modal" type="button" class="bg-navy-mid hover:bg-navy-light text-white font-heading font-bold text-xs px-4 py-2 rounded transition-colors border border-gray-600">
+                <button id="cookie-open-modal" type="button" class="bg-navy-mid text-white font-bold text-xs px-4 py-2 rounded transition-colors border border-gray-600">
                     Personalizar
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- COOKIE PREFERENCES MODAL -->
+    <!-- MODAL DE PREFERÊNCIAS DE COOKIES -->
     <div id="cookie-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-xl max-w-md w-full p-6 text-navy shadow-2xl space-y-5 border border-gray-200">
+        <div class="bg-white rounded-xl max-w-md w-full p-6 text-navy shadow-2xl space-y-5">
             <div class="flex items-center justify-between border-b pb-3">
-                <h3 class="font-heading font-bold text-lg text-navy">Gerenciar Preferências de Cookies</h3>
-                <button type="button" id="cookie-modal-close" class="text-gray-400 hover:text-navy p-1" aria-label="Fechar modal">
+                <h3 class="font-bold text-base text-navy">Gerenciar Cookies</h3>
+                <button type="button" id="cookie-modal-close" class="text-gray-400 hover:text-navy" aria-label="Fechar modal">
                     <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
 
             <div class="space-y-4 text-xs">
-                <!-- Category 1 -->
-                <div class="flex items-start justify-between gap-4 p-3 bg-slateBg rounded-lg">
+                <div class="flex items-start justify-between gap-4 p-3 bg-surfaceBg rounded-lg">
                     <div>
-                        <p class="font-heading font-bold text-navy">Cookies Essenciais</p>
-                        <p class="text-bodyGray mt-0.5">Necessários para o funcionamento básico do site e navegação segura.</p>
+                        <p class="font-bold text-navy">Cookies Essenciais</p>
+                        <p class="text-textGray mt-0.5">Necessários para o correto funcionamento do site.</p>
                     </div>
-                    <span class="text-xs font-bold text-teal bg-teal-light px-2 py-1 rounded">Sempre Ativo</span>
+                    <span class="text-[10px] font-bold text-teal bg-teal-soft px-2 py-0.5 rounded">Ativo</span>
                 </div>
 
-                <!-- Category 2 -->
-                <div class="flex items-start justify-between gap-4 p-3 bg-slateBg rounded-lg">
+                <div class="flex items-start justify-between gap-4 p-3 bg-surfaceBg rounded-lg">
                     <div>
-                        <p class="font-heading font-bold text-navy">Cookies de Desempenho e Analytics</p>
-                        <p class="text-bodyGray mt-0.5">Ajudam a compreender como os visitantes interagem com o site.</p>
+                        <p class="font-bold text-navy">Cookies Analíticos</p>
+                        <p class="text-textGray mt-0.5">Auxiliam na medição do desempenho do site.</p>
                     </div>
-                    <label class="relative inline-flex items-center cursor-pointer mt-1">
-                        <input type="checkbox" id="cookie-opt-analytics" class="sr-only peer" checked>
-                        <div class="w-9 h-5 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-teal"></div>
-                    </label>
+                    <input type="checkbox" id="cookie-opt-analytics" class="mt-1 text-teal focus:ring-teal" checked>
                 </div>
             </div>
 
-            <div class="pt-2 flex justify-end gap-2 border-t">
-                <button type="button" id="cookie-save-prefs" class="w-full bg-navy hover:bg-navy-mid text-white font-heading font-bold text-xs py-2.5 rounded transition-colors">
-                    Salvar Minhas Preferências
+            <div class="pt-2 border-t">
+                <button type="button" id="cookie-save-prefs" class="w-full bg-navy hover:bg-navy-mid text-white font-bold text-xs py-2.5 rounded transition-colors">
+                    Salvar Preferências
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- MODAL INSTITUCIONAL (POLÍTICA E TERMOS) -->
+    <!-- MODAL DE DOCUMENTOS LEGAIS -->
     <div id="legal-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-xl max-w-2xl w-full max-h-[85vh] flex flex-col p-6 text-navy shadow-2xl border border-gray-200">
+        <div class="bg-white rounded-xl max-w-2xl w-full max-h-[80vh] flex flex-col p-6 text-navy shadow-2xl">
             <div class="flex items-center justify-between border-b pb-3 shrink-0">
-                <h3 id="legal-modal-title" class="font-heading font-bold text-lg text-navy">Informação Legal</h3>
-                <button type="button" id="legal-modal-close" class="text-gray-400 hover:text-navy p-1" aria-label="Fechar modal">
+                <h3 id="legal-modal-title" class="font-serif font-bold text-xl text-navy">Informação Legal</h3>
+                <button type="button" id="legal-modal-close" class="text-gray-400 hover:text-navy" aria-label="Fechar modal">
                     <i class="fa-solid fa-xmark text-xl"></i>
                 </button>
             </div>
 
-            <div id="legal-modal-body" class="overflow-y-auto py-4 text-xs sm:text-sm text-bodyGray space-y-4 leading-relaxed pr-2">
-                <!-- Content inserted via JavaScript -->
+            <div id="legal-modal-body" class="overflow-y-auto py-4 text-xs text-textGray space-y-3 leading-relaxed">
+                <!-- Conteúdo dinâmico -->
             </div>
 
             <div class="pt-3 border-t shrink-0 flex justify-end">
-                <button type="button" id="legal-modal-btn-close" class="bg-navy hover:bg-navy-mid text-white font-heading font-bold text-xs px-5 py-2 rounded transition-colors">
+                <button type="button" id="legal-modal-btn-close" class="bg-navy hover:bg-navy-mid text-white font-bold text-xs px-5 py-2 rounded">
                     Fechar
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT LÓGICO -->
+    <!-- JAVASCRIPT FUNCIONAL E SEM DEPENDÊNCIAS -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 1. Dynamic Year Update
+            // 1. Atualização dinâmica do ano
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
-            // 2. Mobile Menu Toggle
+            // 2. Menu Mobile
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const iconOpen = document.getElementById('menu-icon-open');
@@ -902,7 +855,6 @@
             }
 
             mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     if (!mobileMenu.classList.contains('hidden')) {
@@ -911,9 +863,8 @@
                 });
             });
 
-            // 3. Accessible FAQ Accordion
+            // 3. FAQ Accordion Acessível
             const faqToggles = document.querySelectorAll('.faq-toggle');
-
             faqToggles.forEach(toggle => {
                 toggle.addEventListener('click', () => {
                     const expanded = toggle.getAttribute('aria-expanded') === 'true';
@@ -921,7 +872,6 @@
                     const targetContent = document.getElementById(targetId);
                     const chevron = toggle.querySelector('.fa-chevron-down');
 
-                    // Close all other panels
                     faqToggles.forEach(otherToggle => {
                         if (otherToggle !== toggle) {
                             otherToggle.setAttribute('aria-expanded', 'false');
@@ -931,7 +881,6 @@
                         }
                     });
 
-                    // Toggle current
                     toggle.setAttribute('aria-expanded', !expanded);
                     targetContent.classList.toggle('hidden');
                     if (chevron) {
@@ -940,7 +889,7 @@
                 });
             });
 
-            // 4. Form Submission (Formatted WhatsApp Message)
+            // 4. Formulário Inteligente com Redirecionamento WhatsApp
             const contactForm = document.getElementById('contact-form');
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
@@ -950,19 +899,16 @@
                     const phone = document.getElementById('form-phone').value.trim();
                     const message = document.getElementById('form-message').value.trim();
 
-                    if (!name || !phone || !message) {
-                        alert('Por favor, preencha todos os campos obrigatórios.');
-                        return;
-                    }
+                    if (!name || !phone || !message) return;
 
-                    const formattedMessage = `Olá! Meu nome é *${name}* (%2B${phone}).%0A%0A*Mensagem enviada pelo site:*%0A${encodeURIComponent(message)}`;
+                    const formattedMessage = `Olá! Meu nome é *${name}* (${phone}).%0A%0A*Mensagem do site:*%0A${encodeURIComponent(message)}`;
                     const whatsappUrl = `https://wa.me/5511985853188?text=${formattedMessage}`;
 
                     window.open(whatsappUrl, '_blank');
                 });
             }
 
-            // 5. Cookie Preferences & Banner Logic
+            // 5. Preferências de Cookies e LocalStorage
             const cookieBanner = document.getElementById('cookie-banner');
             const cookieModal = document.getElementById('cookie-modal');
             const btnAcceptAll = document.getElementById('cookie-accept-all');
@@ -970,10 +916,9 @@
             const btnCloseModal = document.getElementById('cookie-modal-close');
             const btnSavePrefs = document.getElementById('cookie-save-prefs');
             const btnFooterCookieSettings = document.getElementById('btn-cookie-settings');
-
             const cookieConsentKey = 'laundrybox_cookie_consent';
 
-            function checkCookieConsent() {
+            function checkConsent() {
                 const consent = localStorage.getItem(cookieConsentKey);
                 if (!consent) {
                     cookieBanner.classList.remove('hidden');
@@ -1004,9 +949,9 @@
                 cookieModal.classList.remove('hidden');
             });
 
-            checkCookieConsent();
+            checkConsent();
 
-            // 6. Legal Modals (Privacy Policy & Terms of Use)
+            // 6. Modais Legais (Política de Privacidade e Termos de Uso)
             const legalModal = document.getElementById('legal-modal');
             const legalTitle = document.getElementById('legal-modal-title');
             const legalBody = document.getElementById('legal-modal-body');
@@ -1015,37 +960,31 @@
             const btnPrivacy = document.getElementById('btn-privacy');
             const btnTerms = document.getElementById('btn-terms');
 
-            const privacyContent = `
-                <p><strong>Última atualização:</strong> 2026</p>
-                <p>A <strong>Laundry Box</strong>, estabelecida na Rua Cardoso de Almeida, 1311, Perdizes, São Paulo — SP, compromete-se com a proteção da privacidade e dos dados pessoais de seus clientes e visitantes.</p>
-                <h4 class="font-bold text-navy text-xs uppercase tracking-wider mt-3">1. Coleta de Informações</h4>
-                <p>Coletamos apenas as informações fornecidas voluntariamente pelo usuário através do nosso formulário de contato (nome, telefone e mensagem) para viabilizar o atendimento diretamente via WhatsApp.</p>
-                <h4 class="font-bold text-navy text-xs uppercase tracking-wider mt-3">2. Uso dos Dados</h4>
-                <p>Os dados fornecidos são utilizados exclusivamente para responder a dúvidas, enviar orçamentos solicitados e prestar informações institucionais sobre nossos serviços de lavanderia.</p>
-                <h4 class="font-bold text-navy text-xs uppercase tracking-wider mt-3">3. Armazenamento e Compartilhamento</h4>
-                <p>Não compartilhamos, vendemos ou alugamos dados pessoais a terceiros. As mensagens são direcionadas para a conta oficial de atendimento do WhatsApp da empresa.</p>
+            const privacyText = `
+                <p><strong>DOCUMENTO PRELIMINAR DE PRIVACIDADE (PENDENTE DE VALIDAÇÃO LEGAL DEFINITIVA)</strong></p>
+                <p>A <strong>Laundry Box</strong> (Rua Cardoso de Almeida, 1311, Perdizes, São Paulo — SP) valoriza a privacidade de seus clientes.</p>
+                <h4 class="font-bold text-navy mt-2">1. Coleta de Dados</h4>
+                <p>Os dados informados no formulário de contato (nome, telefone e mensagem) são exclusivamente utilizados para o direcionamento e facilitação do atendimento pelo WhatsApp da empresa.</p>
+                <h4 class="font-bold text-navy mt-2">2. Compartilhamento</h4>
+                <p>Não compartilhamos, vendemos ou divulgamos informações pessoais a terceiros sem o consentimento do titular.</p>
             `;
 
-            const termsContent = `
-                <p><strong>Última atualização:</strong> 2026</p>
-                <p>Ao acessar e utilizar o website da <strong>Laundry Box</strong> (https://laundrybox.com.br), você concorda com os termos e condições descritos abaixo:</p>
-                <h4 class="font-bold text-navy text-xs uppercase tracking-wider mt-3">1. Uso das Informações</h4>
-                <p>O conteúdo apresentado neste website possui caráter informativo sobre os serviços de lavagem, secagem e cuidados oferecidos na unidade de Perdizes.</p>
-                <h4 class="font-bold text-navy text-xs uppercase tracking-wider mt-3">2. Confirmação de Valores e Horários</h4>
-                <p>Valores, tabelas de serviços e horários de funcionamento estão sujeitos a atualizações e devem ser confirmados diretamente com o atendimento presencial ou via WhatsApp oficial.</p>
-                <h4 class="font-bold text-navy text-xs uppercase tracking-wider mt-3">3. Propriedade Intelectual</h4>
-                <p>A marca Laundry Box e os elementos visuais deste website são de uso exclusivo da empresa.</p>
+            const termsText = `
+                <p><strong>TERMOS PRELIMINARES DE USO (PENDENTES DE VALIDAÇÃO LEGAL DEFINITIVA)</strong></p>
+                <p>Ao navegar pelo site da <strong>Laundry Box</strong>, o usuário aceita as diretrizes de consulta de informações institucionais.</p>
+                <h4 class="font-bold text-navy mt-2">1. Serviços e Preços</h4>
+                <p>Os horários, tabelas e condições específicas de lavagem e secagem devem ser confirmados via contato no WhatsApp oficial (11) 98585-3188.</p>
             `;
 
             btnPrivacy.addEventListener('click', function() {
                 legalTitle.textContent = 'Política de Privacidade';
-                legalBody.innerHTML = privacyContent;
+                legalBody.innerHTML = privacyText;
                 legalModal.classList.remove('hidden');
             });
 
             btnTerms.addEventListener('click', function() {
                 legalTitle.textContent = 'Termos de Uso';
-                legalBody.innerHTML = termsContent;
+                legalBody.innerHTML = termsText;
                 legalModal.classList.remove('hidden');
             });
 
